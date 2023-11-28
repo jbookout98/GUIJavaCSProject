@@ -22,7 +22,7 @@ public class InputListener extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         // Your implementation here
 
-        if(textField.getText() != ""){
+        if(textField.getText().isEmpty()==false){
             Character c = textField.getText().charAt(0);
             usableHangMan.guessedLetter(c);
             playable=!usableHangMan.isGameOver();

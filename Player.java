@@ -8,6 +8,9 @@ public class Player {
      * Constructor for Player.
      * @param name Name of the player.
      */
+    public void setName(String name){
+        this.name=name;
+    }
     public Player(String name){
         this.name =name;
     }

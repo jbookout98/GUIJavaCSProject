@@ -14,10 +14,10 @@ public class Main {
 
         h= new HangmanGame(4);
 
-        MySwingFrame frame = new MySwingFrame(h);
+        MySwingFrame frame = new MySwingFrame(h,player);
 
         frame.setVisible(true);
-
+        //player.incrementScores(10-hangmanGame.getCurrentAttempts());
     }
 
     /**

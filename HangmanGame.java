@@ -14,12 +14,13 @@ public class HangmanGame extends JComponent{
     private Set<Character> guessedLetters;
     private MySwingFrame baseFrame;
     public JLabel textLabel;
+    public JLabel topAttemptsLabel;
     public WordBank wordBank;
     protected boolean wonGame = false;
 
     /**
      * Constructor for HangmanGame.
-     * @param secretWord The word to be guessed.
+
      * @param maxAttempts The maximum number of attempts allowed.
      */
     public HangmanGame(int maxAttempts){
@@ -65,6 +66,7 @@ public class HangmanGame extends JComponent{
         }else{
             currentAttempts++;
             System.out.println("Incorrect Guess!");
+            topAttemptsLabel.setText("Current Wrong Attemps Left: " + Integer.toString(maxAttempts-currentAttempts));
         }
         this.repaint();
     }
@@ -74,6 +76,7 @@ public class HangmanGame extends JComponent{
     public boolean isGameOver() {
         if (guessedWord.toString().equals(secretWord)) {
             wonGame=true;
+            baseFrame.AddToScore(((maxAttempts-currentAttempts)*10));
             baseFrame.showGameOverButtons();
             return true;
         }
@@ -87,6 +90,7 @@ public class HangmanGame extends JComponent{
         return false;
     }
     public void resetGame() {
+
         currentAttempts = 0;
         this.secretWord=wordBank.getRandomWord();
         guessedLetters.clear();

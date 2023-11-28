@@ -5,7 +5,7 @@ import java.util.Random;
 public class WordBank {
 
     private String[] words={
-            "hello","poop","minecraft","mercury","bob","burger","gum",""
+            "hello","poop","minecraft","mercury","bob","burger","gum","words","chocolate"
 
 
     };
